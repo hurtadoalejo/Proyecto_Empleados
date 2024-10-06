@@ -77,4 +77,73 @@ public class Empresa {
         this.listaEmpleadoFreelance = listaEmpleadoFreelance;
     }
     
+    /**
+     * Metodo para agregar un empleado freelance a la lista de empleados freelance de la empresa
+     * @param empleadoFreelance Empleado freelance que se busca agregar a la lista de empleados freelance de la empresa
+     */
+    public void agregarEmpleadoFreelance(EmpleadoFreelance empleadoFreelance){
+        if (!verificarEmpleadoFreelance(empleadoFreelance.getIdentificacion())) {
+            listaEmpleadoFreelance.add(empleadoFreelance);
+        }
+    }
+    /**
+     * Metodo para verificar si una identificacion es igual a otra en la lista de empleados freelance de la empresa
+     * @param identificacion Identificacion a verificar en la lista de empleados freelance
+     * @return Decision sobre si la identificacion esta repetida o no
+     */
+    public boolean verificarEmpleadoFreelance(String identificacion){
+        boolean decision = false;
+        for (EmpleadoFreelance empleadoFreelance : listaEmpleadoFreelance) {
+            if (empleadoFreelance.getIdentificacion().equals(identificacion)) {
+                decision = true;
+            }
+        }
+        return decision;
+    }
+    /**
+     * Metodo para eliminar un empleado freelance de la lista de empleados freelance de la empresa
+     * @param identificacion Identificacion del empleado freelance que se busca eliminar
+     */
+    public void eliminarEmpleadoFreelance(String identificacion){
+        for (EmpleadoFreelance empleadoFreelance : listaEmpleadoFreelance) {
+            if (empleadoFreelance.getIdentificacion().equals(identificacion)) {
+                listaEmpleadoFreelance.remove(empleadoFreelance);
+            }
+        }
+    }
+
+    /**
+     * Metodo para agregar un empleado por hora a la lista de empleados por hora de la empresa
+     * @param EmpleadoPorHora Empleado por hora que se busca agregar a la lista de empleados por hora de la empresa
+     */
+    public void agregarEmpleadoPorHora(EmpleadoPorHora empleadoPorHora){
+        if (!verificarEmpleadoPorHora(empleadoPorHora.getIdentificacion())) {
+            listaEmpleadosPorHora.add(empleadoPorHora);
+        }
+    }
+    /**
+     * Metodo para verificar si una identificacion es igual a otra en la lista de empleados por hora de la empresa
+     * @param identificacion Identificacion a verificar en la lista de empleados freelance
+     * @return Decision sobre si la identificacion esta repetida o no
+     */
+    public boolean verificarEmpleadoPorHora(String identificacion){
+        boolean decision = false;
+        for (EmpleadoPorHora empleadoPorHora : listaEmpleadosPorHora) {
+            if (empleadoPorHora.getIdentificacion().equals(identificacion)) {
+                decision = true;
+            }
+        }
+        return decision;
+    }
+    /**
+     * Metodo para eliminar un empleado por hora de la lista de empleados por hora de la empresa
+     * @param identificacion Identificacion del empleado por hora que se busca eliminar
+     */
+    public void eliminarEmpleadoPorHora(String identificacion){
+        for (EmpleadoPorHora empleadoPorHora : listaEmpleadosPorHora) {
+            if (empleadoPorHora.getIdentificacion().equals(identificacion)) {
+                listaEmpleadosPorHora.remove(empleadoPorHora);
+            }
+        }
+    }
 }

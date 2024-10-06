@@ -7,7 +7,7 @@
  */
 package co.edu.uniquindio.poo;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -18,12 +18,28 @@ public class AppTest {
     private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
 
     /**
-     * Rigorous Test :-)
+     * Test para verificar si se calcula correctamente el salario de un empleado freelance
      */
     @Test
-    public void shouldAnswerWithTrue() {
+    public void testCalcularSalarioEmpleadoFreelance() {
         LOG.info("Iniciado test shouldAnswerWithTrue");
-        assertTrue(true);
+        Empresa empresa = new Empresa("Empresa prueba");
+        EmpleadoFreelance empleadoFreelance = new EmpleadoFreelance("Alejandro", "1092850000", 4, 4000);
+        empresa.agregarEmpleadoFreelance(empleadoFreelance);
+        assertEquals(16000, empleadoFreelance.calcularSalario());
+        LOG.info("Finalizando test shouldAnswerWithTrue");
+    }
+
+    /**
+     * Test para verificar si se calcula correctamente el salario de un empleado por hora
+     */
+    @Test
+    public void testCalcularSalarioEmpleadoPorHora() {
+        LOG.info("Iniciado test shouldAnswerWithTrue");
+        Empresa empresa = new Empresa("Empresa prueba");
+        EmpleadoPorHora empleadoPorHora = new EmpleadoPorHora("Alejandro", "1092850000", 10, 2500);
+        empresa.agregarEmpleadoPorHora(empleadoPorHora);
+        assertEquals(25000, empleadoPorHora.calcularSalario());
         LOG.info("Finalizando test shouldAnswerWithTrue");
     }
 }

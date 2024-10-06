@@ -44,5 +44,6 @@ public abstract class Empleado {
         this.identificacion = identificacion;
     }
 
-    public abstract void calcularSalario();
+    public abstract double calcularSalario();
+    
 }

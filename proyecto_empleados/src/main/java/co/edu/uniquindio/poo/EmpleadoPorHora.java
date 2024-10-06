@@ -55,4 +55,5 @@ public class EmpleadoPorHora extends Empleado{
         double salarioTotal = salarioPorHora*horasTrabajadas;
         return salarioTotal;
     }
+    
 }

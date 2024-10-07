@@ -56,4 +56,11 @@ public class EmpleadoPorHora extends Empleado{
         return salarioTotal;
     }
     
+    /**
+     * Metodo para retornar la informacion de un empleado por hora
+     */
+    public String toString(){
+        String info = "\nEmpleado por hora: " + "Nombre=" + super.getNombre() + ", Identificacion=" + super.getIdentificacion() + "\nHoras trabajadas=" + horasTrabajadas + ", Salario por hora=" + salarioPorHora;
+        return info;
+    }
 }

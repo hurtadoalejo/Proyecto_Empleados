@@ -146,4 +146,39 @@ public class Empresa {
             }
         }
     }
+
+    /**
+     * Metodo para agregar un empleado de tiempo completo a la lista de empleados de tiempo completo de la empresa
+     * @param EmpleadoTiempoCompleto Empleado de tiempo completo que se busca agregar a la lista de empleados de tiempo completa de la empresa
+     */
+    public void agregarEmpleadoTiempoCompleto(EmpleadoTiempoCompleto empleadoTiempoCompleto){
+        if (!verificarEmpleadoTiempoCompleto(empleadoTiempoCompleto.getIdentificacion())) {
+            listaEmpleadosTiempoCompleto.add(empleadoTiempoCompleto);
+        }
+    }
+    /**
+     * Metodo para verificar si una identificacion es igual a otra en la lista de empleados de tiempo completo de la empresa
+     * @param identificacion Identificacion a verificar en la lista de empleados de tiempo completo
+     * @return Decision sobre si la identificacion esta repetida o no
+     */
+    public boolean verificarEmpleadoTiempoCompleto(String identificacion){
+        boolean decision = false;
+        for (EmpleadoTiempoCompleto empleadoTiempoCompleto : listaEmpleadosTiempoCompleto) {
+            if (empleadoTiempoCompleto.getIdentificacion().equals(identificacion)) {
+                decision = true;
+            }
+        }
+        return decision;
+    }
+    /**
+     * Metodo para eliminar un empleado de tiempo completo de la lista de empleados de tiempo completo de la empresa
+     * @param identificacion Identificacion del empleado de tiempo completo que se busca eliminar
+     */
+    public void eliminarEmpleadoTiempoCompleto(String identificacion){
+        for (EmpleadoTiempoCompleto empleadoTiempoCompleto : listaEmpleadosTiempoCompleto) {
+            if (empleadoTiempoCompleto.getIdentificacion().equals(identificacion)) {
+                listaEmpleadosTiempoCompleto.remove(empleadoTiempoCompleto);
+            }
+        }
+    }
 }

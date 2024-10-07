@@ -56,4 +56,11 @@ public class EmpleadoFreelance extends Empleado{
         return salarioTotal;
     }
 
+    /**
+     * Metodo para retornar la informacion de un empleado freelance
+     */
+    public String toString(){
+        String info = "\nEmpleado Freelance: " + "Nombre=" + super.getNombre() + ", Identificacion=" + super.getIdentificacion() + "\nProyectos completados=" + proyectosCompletados + ", Pago por proyecto=" + pagoPorProyecto;
+        return info;
+    }
 }

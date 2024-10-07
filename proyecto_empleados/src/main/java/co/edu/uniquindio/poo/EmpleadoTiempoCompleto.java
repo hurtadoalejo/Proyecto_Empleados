@@ -38,4 +38,11 @@ public class EmpleadoTiempoCompleto extends Empleado{
         return salarioMensual;
     }
 
+    /**
+     * Metodo para retornar la informacion de un empleado a tiempo completo
+     */
+    public String toString(){
+        String info = "\nEmpleado de Tiempo Completo: " + "Nombre=" + super.getNombre() + ", Identificacion=" + super.getIdentificacion() + "\nSalario mensual=" + salarioMensual;
+        return info;
+    }
 }

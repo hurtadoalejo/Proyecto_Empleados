@@ -181,4 +181,24 @@ public class Empresa {
             }
         }
     }
+
+    /**
+     * Metodo para obtener la informacion de la empresa
+     */
+    @Override
+    public String toString() {
+        String info = "Empresa:\n" + "Nombre=" + nombre + "\n\nLista empleados freelance:";
+        for (EmpleadoFreelance empleadoFreelance : listaEmpleadoFreelance) {
+            info += empleadoFreelance.toString();
+        }
+        info += "\n\nLista empleados por hora:";
+        for (EmpleadoPorHora empleadoPorHora : listaEmpleadosPorHora) {
+            info += empleadoPorHora.toString();
+        }
+        info += "\n\nLista empleados tiempo completo:";
+        for (EmpleadoTiempoCompleto empleadoTiempoCompleto : listaEmpleadosTiempoCompleto) {
+            info += empleadoTiempoCompleto.toString();
+        }
+        return info;
+    }
 }

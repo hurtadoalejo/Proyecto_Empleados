@@ -9,8 +9,6 @@ public class App {
         empresa.agregarEmpleadoTiempoCompleto(empleadoTiempoCompleto);
         empresa.agregarEmpleadoFreelance(empleadoFreelance);
         empresa.agregarEmpleadoPorHora(empleadoPorHora);
-        System.out.println(empleadoFreelance.calcularSalario());
-        System.out.println(empleadoPorHora.calcularSalario());
-        System.out.println(empleadoTiempoCompleto.calcularSalario());
+        System.out.println(empresa.toString());
     }
 }
